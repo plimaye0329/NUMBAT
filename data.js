@@ -21,7 +21,7 @@ const PULSARS = [
     psrj: "J1742-2731",
     period_ms: 333.27,
     dm: 330.17,
-    binary: "False",
+    binary: false,
     disc_date: "2026-08-10",
     project: "GBPS",
     png: "assets/plots/GBPS_cand1.png",
