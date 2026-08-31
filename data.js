@@ -17,6 +17,19 @@
 //   pipeline    - string, e.g. "PEASOUP" (optional, shown in modal)
 
 const PULSARS = [
+  {
+    psrj: "J1742-2731",
+    period_ms: 333.27,
+    dm: 330.17,
+    binary: "isolated",
+    disc_date: "2026-08-10",
+    project: "GBPS",
+    png: "assets/plots/GBPS_cand1.png",
+    obs_date: "2026-06-22",
+    obs_band: "CryoPAF-High",
+    snr: 20.6,
+    pipeline: "Presto"
+  },
   
   {
     psrj: "J1738-2845",
