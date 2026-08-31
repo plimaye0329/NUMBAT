@@ -80,11 +80,10 @@ function renderScatter() {
 }
 
 function formatBinary(v) {
-  if (v === true) return "true";
-  if (v === false) return "false";
-  return "unknown";
+  if (v === true) return "Binary";
+  if (v === false) return "Isolated";
+  return "Unknown";
 }
-
 function getFilteredSortedData(filters) {
   let rows = PULSARS.filter(row =>
     COLUMNS.every(col => {

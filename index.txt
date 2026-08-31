@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NUMBAT Pulsar Catalog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="page-header">
+  <div class="header-inner">
+    <h1 class="title">NUMBAT</h1>
+    <p class="subtitle">New Ultra deep survey of Millisecond pulsars in the Bulge using Array-based radio Telescopes — discoveries from the Murriyang (Parkes) and MeerKAT bulge surveys.</p>
+  </div>
+</header>
+
+<main>
+
+  <section class="stats-bar" id="stats-bar" aria-label="Discovery statistics">
+    <!-- populated by app.js -->
+  </section>
+  <p class="last-updated" id="last-updated"></p>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab-btn active" data-tab="graph" role="tab" aria-selected="true">Graph</button>
+    <button class="tab-btn" data-tab="table" role="tab" aria-selected="false">Table</button>
+  </nav>
+
+  <section id="graph-panel" class="panel active">
+    <div class="graph-layout">
+      <div id="scatter" class="scatter"></div>
+      <div class="graph-controls">
+        <label>
+          <span>x-axis</span>
+          <select id="x-axis-select">
+            <option value="period_ms">Period (ms)</option>
+            <option value="dm">DM (pc cm⁻³)</option>
+          </select>
+        </label>
+        <label>
+          <span>y-axis</span>
+          <select id="y-axis-select">
+            <option value="dm" selected>DM (pc cm⁻³)</option>
+            <option value="period_ms">Period (ms)</option>
+          </select>
+        </label>
+        <label class="checkbox-row">
+          <input type="checkbox" id="log-x" checked>
+          <span>log-x</span>
+        </label>
+        <label class="checkbox-row">
+          <input type="checkbox" id="log-y">
+          <span>log-y</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <section id="table-panel" class="panel">
+    <div class="table-toolbar">
+      <div class="toggle-columns-wrap">
+        <button id="toggle-columns-btn" class="btn-secondary">Toggle columns</button>
+        <div id="toggle-columns-menu" class="toggle-columns-menu hidden"></div>
+      </div>
+    </div>
+    <div class="table-scroll">
+      <table id="catalog-table">
+        <thead>
+          <tr id="table-header-row"></tr>
+          <tr id="table-filter-row"></tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<div id="modal-overlay" class="modal-overlay hidden">
+  <div class="modal">
+    <button id="modal-close" class="modal-close" aria-label="Close">&times;</button>
+    <h2 id="modal-title"></h2>
+    <div class="modal-body">
+      <div class="modal-image-wrap">
+        <img id="modal-image" alt="Discovery diagnostic plot">
+        <p id="modal-image-missing" class="image-missing hidden">Diagnostic plot not yet added.</p>
+      </div>
+      <div class="modal-details">
+        <h3>Pulsar parameters</h3>
+        <dl id="modal-params"></dl>
+        <h3>Discovery details</h3>
+        <dl id="modal-discovery"></dl>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
