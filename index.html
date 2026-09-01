@@ -26,11 +26,11 @@
   <p class="last-updated" id="last-updated"></p>
 
   <nav class="tabs" role="tablist">
-    <button class="tab-btn active" data-tab="graph" role="tab" aria-selected="true">Graph</button>
-    <button class="tab-btn" data-tab="table" role="tab" aria-selected="false">Table</button>
+    <button class="tab-btn" data-tab="graph" role="tab" aria-selected="false">Graph</button>
+    <button class="tab-btn active" data-tab="table" role="tab" aria-selected="true">Table</button>
   </nav>
 
-  <section id="graph-panel" class="panel active">
+  <section id="graph-panel" class="panel">
     <div class="graph-layout">
       <div id="scatter" class="scatter"></div>
       <div class="graph-controls">
@@ -60,7 +60,7 @@
     </div>
   </section>
 
-  <section id="table-panel" class="panel">
+  <section id="table-panel" class="panel active">
     <div class="table-toolbar">
       <div class="toggle-columns-wrap">
         <button id="toggle-columns-btn" class="btn-secondary">Toggle columns</button>
@@ -76,6 +76,7 @@
         <tbody id="table-body"></tbody>
       </table>
     </div>
+    <p class="table-footnote">Click any row — or a point on the scatter plot in the Graph tab — to view the candidate's diagnostic plot and parameters.</p>
   </section>
 
 </main>

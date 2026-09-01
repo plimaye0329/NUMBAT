@@ -4,8 +4,9 @@ const PROJECT_LABELS = { GBPS: "GBPS (Parkes)", MGBS: "MGBS (MeerKAT)" };
 const COLUMNS = [
   { key: "psrj", label: "PSRJ" },
   { key: "period_ms", label: "Period (ms)" },
+  { key: "ra_deg", label: "RA (deg)" },
+  { key: "dec_deg", label: "Dec (deg)" },
   { key: "dm", label: "DM (pc cm⁻³)" },
-  { key: "binary", label: "Binary" },
   { key: "disc_date", label: "Disc. date" },
   { key: "project", label: "Project" }
 ];
@@ -215,7 +216,7 @@ function openModal(psrj) {
   document.getElementById("modal-params").innerHTML = `
     <dt>Period</dt><dd>${p.period_ms} ms</dd>
     <dt>Dispersion measure</dt><dd>${p.dm} pc cm⁻³</dd>
-    <dt>Binary</dt><dd>${formatBinary(p.binary)}</dd>
+
   `;
 
   document.getElementById("modal-discovery").innerHTML = `
@@ -281,4 +282,4 @@ setupTabs();
 setupGraphControls();
 setupColumnToggle();
 setupModal();
-renderScatter();
+

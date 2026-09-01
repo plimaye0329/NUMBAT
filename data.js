@@ -19,9 +19,10 @@
 const PULSARS = [
   {
     psrj: "J1742-2731",
+    ra_deg: 265.5000,
+    dec_deg: -27.5166,
     period_ms: 333.27,
     dm: 330.17,
-    binary: false,
     disc_date: "2026-08-10",
     project: "GBPS",
     png: "assets/plots/GBPS_cand1.png",
@@ -33,9 +34,10 @@ const PULSARS = [
   
   {
     psrj: "J1738-2845",
+    ra_deg: 264.5000,
+    dec_deg: -28.7500,
     period_ms: 4.59,
     dm: 390.83,
-    binary: "True",
     disc_date: "2026-08-02",
     project: "GBPS",
     png: "assets/plots/GBPS_cand2.png",
@@ -46,9 +48,10 @@ const PULSARS = [
   },
   {
     psrj: "J1736-2706",
+    ra_deg: 264.0000,
+    dec_deg: -27.1000,
     period_ms: 315.59,
     dm: 177.56,
-    binary: false,
     disc_date: "2025-02-24",
     project: "MGBS",
     png: "",
