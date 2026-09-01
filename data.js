@@ -43,6 +43,19 @@ const PULSARS = [
     obs_band: "CryoPAF-High",
     snr: 15.5,
     pipeline: "Presto"
+  },
+  {
+    psrj: "J1736-2706",
+    period_ms: 315.59,
+    dm: 177.56,
+    binary: false,
+    disc_date: "2025-02-24",
+    project: "MGBS",
+    png: "",
+    obs_date: "--",
+    obs_band: "MeerKAT L-Band",
+    snr: "-",
+    pipeline: "Peasoup"
   }
   
   
