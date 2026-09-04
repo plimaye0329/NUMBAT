@@ -45,7 +45,23 @@ body {
   color: var(--text-muted);
   font-size: 1rem;
   max-width: 70ch;
+  margin: 0 0 0.6rem 0;
+}
+
+.data-link {
+  color: var(--text-muted);
+  font-size: 0.85rem;
   margin: 0;
+}
+
+.data-link a {
+  color: var(--accent-mgbs);
+}
+
+.table-footnote {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
 }
 
 main {
@@ -289,8 +305,8 @@ tbody td {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 8px;
-  max-width: 1400px;
-  width: 95%;
+  max-width: 900px;
+  width: 100%;
   padding: 2rem;
   position: relative;
 }
@@ -317,7 +333,7 @@ tbody td {
 
 .modal-body {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1.3fr 1fr;
   gap: 2rem;
 }
 

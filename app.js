@@ -3,9 +3,9 @@ const PROJECT_LABELS = { GBPS: "GBPS (Parkes)", MGBS: "MGBS (MeerKAT)" };
 
 const COLUMNS = [
   { key: "psrj", label: "PSRJ" },
-  { key: "period_ms", label: "Period (ms)" },
   { key: "ra_deg", label: "RA (deg)" },
   { key: "dec_deg", label: "Dec (deg)" },
+  { key: "period_ms", label: "Period (ms)" },
   { key: "dm", label: "DM (pc cm⁻³)" },
   { key: "disc_date", label: "Disc. date" },
   { key: "project", label: "Project" }
@@ -13,6 +13,8 @@ const COLUMNS = [
 
 let sortState = { key: "disc_date", dir: "desc" };
 let hiddenColumns = new Set();
+let currentFilters = {};
+let PULSARS = [];
 
 function renderStats() {
   const total = PULSARS.length;
@@ -80,25 +82,18 @@ function renderScatter() {
   });
 }
 
-function formatBinary(v) {
-  if (v === true) return "Binary";
-  if (v === false) return "Isolated";
-  return "Unknown";
-}
 function getFilteredSortedData(filters) {
   let rows = PULSARS.filter(row =>
     COLUMNS.every(col => {
       const f = (filters[col.key] || "").toLowerCase();
       if (!f) return true;
-      const val = col.key === "binary" ? formatBinary(row.binary) : String(row[col.key]);
-      return val.toLowerCase().includes(f);
+      return String(row[col.key]).toLowerCase().includes(f);
     })
   );
 
   const { key, dir } = sortState;
   rows.sort((a, b) => {
     let av = a[key], bv = b[key];
-    if (key === "binary") { av = formatBinary(av); bv = formatBinary(bv); }
     if (typeof av === "number" && typeof bv === "number") {
       return dir === "asc" ? av - bv : bv - av;
     }
@@ -148,8 +143,6 @@ function renderTable() {
   renderTableBody();
 }
 
-let currentFilters = {};
-
 function renderTableBody() {
   const tbody = document.getElementById("table-body");
   tbody.innerHTML = "";
@@ -164,8 +157,6 @@ function renderTableBody() {
       const td = document.createElement("td");
       if (col.key === "project") {
         td.innerHTML = `<span class="badge badge-${row.project.toLowerCase()}">${row.project}</span>`;
-      } else if (col.key === "binary") {
-        td.textContent = formatBinary(row.binary);
       } else {
         td.textContent = row[col.key];
       }
@@ -214,9 +205,10 @@ function openModal(psrj) {
   }
 
   document.getElementById("modal-params").innerHTML = `
+    <dt>RA</dt><dd>${p.ra_deg}°</dd>
+    <dt>Dec</dt><dd>${p.dec_deg}°</dd>
     <dt>Period</dt><dd>${p.period_ms} ms</dd>
     <dt>Dispersion measure</dt><dd>${p.dm} pc cm⁻³</dd>
-
   `;
 
   document.getElementById("modal-discovery").innerHTML = `
@@ -275,11 +267,17 @@ function setupModal() {
   });
 }
 
-renderStats();
-renderColumnToggle();
-renderTable();
-setupTabs();
-setupGraphControls();
-setupColumnToggle();
-setupModal();
+async function init() {
+  const res = await fetch("data.json");
+  PULSARS = await res.json();
 
+  renderStats();
+  renderColumnToggle();
+  renderTable();
+  setupTabs();
+  setupGraphControls();
+  setupColumnToggle();
+  setupModal();
+}
+
+init();

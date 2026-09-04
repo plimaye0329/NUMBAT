@@ -15,6 +15,7 @@
   <div class="header-inner">
     <h1 class="title">NUMBAT</h1>
     <p class="subtitle">New Ultra deep survey of Millisecond pulsars in the Bulge using Array-based radio Telescopes — discoveries from the Murriyang (Parkes) and MeerKAT bulge surveys.</p>
+    <p class="data-link">Raw catalog data: <a href="data.json">data.json</a> · Plain HTML table: <a href="plain.html">plain.html</a></p>
   </div>
 </header>
 
@@ -39,6 +40,8 @@
           <select id="x-axis-select">
             <option value="period_ms">Period (ms)</option>
             <option value="dm">DM (pc cm⁻³)</option>
+            <option value="ra_deg">RA (deg)</option>
+            <option value="dec_deg">Dec (deg)</option>
           </select>
         </label>
         <label>
@@ -46,6 +49,8 @@
           <select id="y-axis-select">
             <option value="dm" selected>DM (pc cm⁻³)</option>
             <option value="period_ms">Period (ms)</option>
+            <option value="ra_deg">RA (deg)</option>
+            <option value="dec_deg">Dec (deg)</option>
           </select>
         </label>
         <label class="checkbox-row">
@@ -101,10 +106,6 @@
 </div>
 
 <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
-<script src="data.js"></script>
 <script src="app.js"></script>
-<footer class="site-footer">
-  Contact: <a href="mailto:pranav.limaye@cnrs-orleans.fr">pranav.limaye@cnrs-orleans.fr</a>
-</footer>
 </body>
 </html>

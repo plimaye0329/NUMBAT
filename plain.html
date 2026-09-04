@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NUMBAT Pulsar Catalog - Plain Table</title>
+<style>
+  body { font-family: monospace; margin: 2rem; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #999; padding: 4px 8px; text-align: left; }
+  th { background: #eee; }
+</style>
+</head>
+
+<body>
+
+<h1>NUMBAT Pulsar Catalog</h1>
+
+<p>Plain, script-free table. Total discoveries: 3 (GBPS: 2, MGBS: 1).</p>
+
+<p>Machine-readable source: <a href="data.json">data.json</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>PSRJ</th>
+      <th>RA (deg)</th>
+      <th>Dec (deg)</th>
+      <th>Period (ms)</th>
+      <th>DM (pc cm^-3)</th>
+      <th>Disc. date</th>
+      <th>Project</th>
+      <th>Diagnostic plot</th>
+      <th>Obs. date</th>
+      <th>Obs. band</th>
+      <th>Discovery S/N</th>
+      <th>Pipeline</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr>
+      <td>J1742-2731</td>
+      <td>265.5000</td>
+      <td>-27.5166</td>
+      <td>333.27</td>
+      <td>330.17</td>
+      <td>2026-08-10</td>
+      <td>GBPS</td>
+      <td>assets/plots/GBPS_cand1.png</td>
+      <td>2026-06-22</td>
+      <td>CryoPAF-High</td>
+      <td>20.6</td>
+      <td>Presto</td>
+    </tr>
+
+    <tr>
+      <td>J1738-2845</td>
+      <td>264.5000</td>
+      <td>-28.7500</td>
+      <td>4.59</td>
+      <td>390.83</td>
+      <td>2026-08-02</td>
+      <td>GBPS</td>
+      <td>assets/plots/GBPS_cand2.png</td>
+      <td>2026-08-24</td>
+      <td>CryoPAF-High</td>
+      <td>15.5</td>
+      <td>Presto</td>
+    </tr>
+
+    <tr>
+      <td>J1736-2706</td>
+      <td>264.0000</td>
+      <td>-27.1000</td>
+      <td>315.59</td>
+      <td>177.56</td>
+      <td>2025-02-24</td>
+      <td>MGBS</td>
+      <td></td>
+      <td>--</td>
+      <td>MeerKAT L-Band</td>
+      <td>-</td>
+      <td>Peasoup</td>
+    </tr>
+
+  </tbody>
+</table>
+
+</body>
+</html>
