@@ -40,5 +40,19 @@
     "obs_band": "MeerKAT L-Band",
     "snr": "-",
     "pipeline": "Peasoup"
+  },
+  {
+    "psrj": "J1722-3625",
+    "ra_deg": 260.5000,
+    "dec_deg": -36.4166,
+    "period_ms": 721.96,
+    "dm": 574.70,
+    "disc_date": "2026-09-18",
+    "project": "GBPS",
+    "png": "",
+    "obs_date": "2026-07-23",
+    "obs_band": "CryoPAF-High",
+    "snr": "30.52",
+    "pipeline": "Presto"
   }
 ]
